@@ -15,29 +15,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-//@Table(name = "tbl_patient")
-public class Patient {
+public class Medic {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
-	private Integer idPatient;
+	private Integer idMedic;
 
-	@Column(length = 70, nullable = false) // name=""
+	@Column(nullable = false, length = 70)
 	private String firstName;
 
-	@Column(length = 70, nullable = false)
+	@Column(nullable = false, length = 70)
 	private String lastName;
 
-	@Column(length = 8, nullable = false)
-	private String dni;
+	@Column(nullable = false, length = 12)
+	private String cmp;
 
-	@Column(length = 150, nullable = false)
-	private String address;
-
-	@Column(length = 10, nullable = false)
-	private String phone;
-
-	@Column(length = 100, nullable = false)
-	private String email;
+	private String phtoUrl;
 }
